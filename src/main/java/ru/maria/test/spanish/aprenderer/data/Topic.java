@@ -2,11 +2,14 @@ package ru.maria.test.spanish.aprenderer.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Objects;
 
-@Data
+//@Data
+@Getter @Setter
 @AllArgsConstructor
 public class Topic {
     private long id;
