@@ -32,6 +32,7 @@ public class WordService {
     }
 
     public Topic getTopicByAlias(String alias) {
+        System.out.println("  topic = " + alias);
         return MODEL.stream()
                 .filter( topic -> topic.getAlias().equals(alias))
                 .findAny().orElseThrow(() -> new IllegalArgumentException("Topic not found!"));

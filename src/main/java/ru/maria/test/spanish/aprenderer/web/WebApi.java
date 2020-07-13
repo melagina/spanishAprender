@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.maria.test.spanish.aprenderer.service.WordService;
 
-@RestController(value="/")
+@RestController(value="/api/1")
 public class WebApi {
 
     @Autowired private WordService service;
@@ -40,7 +40,7 @@ public class WebApi {
     }
 
     @DeleteMapping(value ="/{alias}/words", produces = "application/json")
-    public ResponseEntity saveWordInTopic(@PathVariable String alias, @RequestBody String spanish) {
+    public ResponseEntity deleteWordInTopic(@PathVariable String alias, @RequestBody String spanish) {
         service.deleteWordAtTopic(alias, spanish);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }

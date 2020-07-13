@@ -4,22 +4,24 @@
         <h2>Topics</h2>
         <table>
             <thead>
-                <th th:text="Español"></th>
-                <th th:text="Русски "></th>
+            <th th:text="Español"></th>
+            <th th:text="Русский "></th>
+            <!--                <th th:text="Удалить"></th>-->
             </thead>
             <tbody>
-                <tr th:each="topic : ${topics}">
+            <tr th:each="topic : ${topics}">
                 <td th:text="${topic.spanish}"></td>
                 <td th:text="${topic.russian}"></td>
-                    <table>
-                        <tbody>
-                            <tr th:each="word : ${topic.words}">
-                                <td th:text="${word.spanish}"></td>
-                                <td th:text="${word.russian}"></td>
-                        </tbody>
-                    </table>
+                <td><a th:href="@{delete/{id}(id=${topic.alias})}" class="btn btn-primary">Удалить</a></td>
+                <table>
+                    <tbody>
+                    <tr th:each="word : ${topic.words}">
+                        <td th:text="${word.spanish}"></td>
+                        <td th:text="${word.russian}"></td>
+                    </tbody>
+                </table>
 
-                </tr>
+            </tr>
             </tbody>
         </table>
     </div>

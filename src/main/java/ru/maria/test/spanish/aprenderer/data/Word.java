@@ -12,7 +12,7 @@ public class Word {
     private String topicAlias;
     private String spanish;//
     private String russian;
-
+//    http://localhost:8080/view/delete/week
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
