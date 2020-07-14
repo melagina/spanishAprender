@@ -6,7 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.maria.test.spanish.aprenderer.service.WordService;
 
-@RestController(value="/api/1")
+@RestController
+@RequestMapping("api/1")
 public class WebApi {
 
     @Autowired private WordService service;

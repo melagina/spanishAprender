@@ -13,8 +13,10 @@
                 <td th:text="${topic.spanish}"></td>
                 <td th:text="${topic.russian}"></td>
                 <td><a th:href="@{delete/{id}(id=${topic.alias})}" class="btn btn-primary">Удалить</a></td>
-                <table>
-                    <tbody>
+
+            <table>
+                <tr> <p><a href="create">Add a new word</a></p></tr>
+                <tbody>
                     <tr th:each="word : ${topic.words}">
                         <td th:text="${word.spanish}"></td>
                         <td th:text="${word.russian}"></td>
@@ -25,5 +27,5 @@
             </tbody>
         </table>
     </div>
-    <p><a href="/signup">Add a new user</a></p>
+
 </div>

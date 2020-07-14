@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Word</title>
+</head>
+<body>
+<!--<form action="#" th:action="@{/adduser}" th:object="${word}" method="post">-->
+    <div >
+        <div class="form-group col-md-6">
+            <label for="spanish" class="col-form-label">Español</label>
+            <input type="text"  class="form-control" id="spanish" >
+<!--            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>-->
+        </div>
+        <div >
+            <label for="russian" class="col-form-label">Русский</label>
+            <input type="text"  id="russian" placeholder="Email">
+<!--            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>-->
+        </div>
+    </div>
+    <div >
+        <div >
+            <input type="submit" value="Save word">
+        </div>
+    </div>
+<!--</form>-->
+</body>
+</html>
