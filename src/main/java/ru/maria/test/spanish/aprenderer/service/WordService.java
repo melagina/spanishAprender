@@ -23,7 +23,7 @@ public class WordService {
         words.add(new Word(5, "week","Viernes", "Пятница"));
         words.add(new Word(6, "week","Sábado", "Суббота"));
         words.add(new Word(7, "week","Domingo", "Воскресенье"));
-        Topic c = new Topic(0, "week", "Los días de la semana","Дни недели", words);
+        Topic c = new Topic(0L, "week", "Los días de la semana","Дни недели", words);
         MODEL.add(c);
     }
 
@@ -39,7 +39,7 @@ public class WordService {
     }
 
     public Topic createNewTopic(String alias, String spanish, String russian) {
-        Topic topic = new Topic(-1, alias, spanish, russian, new ArrayList<>());
+        Topic topic = new Topic(-1L, alias, spanish, russian, new ArrayList<>());
         MODEL.add(topic);
         return topic;
     }

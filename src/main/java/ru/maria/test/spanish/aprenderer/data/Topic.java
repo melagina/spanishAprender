@@ -12,7 +12,7 @@ import java.util.Objects;
 @Getter @Setter
 @AllArgsConstructor
 public class Topic {
-    private long id;
+    private Long id;
     private String alias;
     private String spanish;
     private String russian;

@@ -1,4 +1,4 @@
-package ru.maria.test.spanish.aprenderer.web;
+package ru.maria.test.spanish.aprenderer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import ru.maria.test.spanish.aprenderer.service.WordService;
 
 @RestController
 @RequestMapping("api/1")
-public class WebApi {
+public class WordWebApiController {
 
     @Autowired private WordService service;
 

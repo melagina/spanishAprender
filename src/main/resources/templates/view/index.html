@@ -1,28 +1,44 @@
 <div th:switch="${topics}" xmlns:th="http://www.w3.org/1999/xhtml">
-    <h2 th:case="null">No users yet!</h2>
+    <h2 th:case="null">Нет топиков!</h2>
     <div th:case="*">
         <h2>Topics</h2>
-        <table>
+        <table border>
             <thead>
             <th th:text="Español"></th>
             <th th:text="Русский "></th>
-            <!--                <th th:text="Удалить"></th>-->
             </thead>
             <tbody>
             <tr th:each="topic : ${topics}">
                 <td th:text="${topic.spanish}"></td>
                 <td th:text="${topic.russian}"></td>
+                <td th:text="${topic.id}"></td>
                 <td><a th:href="@{delete/{id}(id=${topic.alias})}" class="btn btn-primary">Удалить</a></td>
 
-            <table>
-                <tr> <p><a href="create">Add a new word</a></p></tr>
-                <tbody>
+                <table border>
+                    <tbody>
                     <tr th:each="word : ${topic.words}">
                         <td th:text="${word.spanish}"></td>
                         <td th:text="${word.russian}"></td>
+                    </tr>
+
                     </tbody>
                 </table>
 
+                <table border>
+                    <tbody>
+                    <tr>
+                        <td>
+
+                            <form method="post" action="#" th:action="@{/view/index}" >
+                                <input type="text" th:value="${spanish}" name ="spanish" placeholder="español"/>
+                                <input type="text" th:value="${russian}" name ="russian" placeholder="русский"/>
+                                <input type="hidden" th:value="${topic.alias}" name ="topicAlias" placeholder="русский"/>
+                                <input type="submit" value="Добавить">
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </tr>
             </tbody>
         </table>
