@@ -27,9 +27,6 @@ public class WordController {
     @PostMapping
     public String addNewWord(Model model, String russian, String spanish, String topicAlias) {
         System.out.println("               addNewWord");
-        System.out.println("               russian = " + russian + ", spanish = " + spanish + ", alias = " + topicAlias);
-//        Word word = new Word(-1, );
-//        topic.getWords().add(word);
         wordService.saveWordInTopic(topicAlias, spanish, russian);
         model.addAttribute("topics", wordService.getAllWords());
         return "view/index";
